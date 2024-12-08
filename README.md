@@ -1,21 +1,19 @@
 # News Analysis Application
 
-A full-stack application that fetches, analyzes, and summarizes news articles using AI.
+A full-stack application that fetches and displays news articles using Next.js and FastAPI.
 
 ## Features
 
 - Fetches latest news articles from News API
-- Generates AI-powered summaries of articles
-- Stores summaries and analysis in SQLite database
-- RESTful API built with FastAPI
-- React frontend for displaying news and summaries
+- Displays news in a responsive grid layout
+- Shows article details including source and publication date
 
-## Backend Setup
+## Setup
 
-1. Create a virtual environment:
+### Backend Setup
+1. Navigate to the backend directory:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+cd backend
 ```
 
 2. Install dependencies:
@@ -23,26 +21,56 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
-- Create a `.env` file in the root directory
-- Add your News API key:
+3. Create a `.env` file and add your News API key:
 ```
 NEWS_API_KEY=your_api_key_here
 ```
 
-4. Run the application:
+4. Start the backend server:
 ```bash
 uvicorn main:app --reload
 ```
 
-## Frontend Setup
+### Frontend Setup
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
 
-(To be added)
+2. Install dependencies:
+```bash
+npm install
+```
 
-## API Endpoints
+3. Start the development server:
+```bash
+npm run dev
+```
 
-- GET `/news/`: Fetch and summarize latest news articles
-- GET `/summarize/`: Summarize custom text
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+
+## Project Structure
+
+```
+News-Analysis/
+├── backend/
+│   ├── main.py
+│   └── requirements.txt
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   └── app/
+    ├── package.json
+    └── tsconfig.json
+```
+
+## Technologies Used
+
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: FastAPI, Python
+- API: News API
 
 ## Contributing
 
@@ -51,7 +79,3 @@ uvicorn main:app --reload
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details
